@@ -1,22 +1,22 @@
-/*#####     ###    ########  ########   #######  ##    ##
-##    ##   ## ##   ##     ## ##     ## ##     ## ###   ##
-##        ##   ##  ##     ## ##     ## ##     ## ####  ##
-##       ##     ## ########  ########  ##     ## ## ## ##
-##       ######### ##   ##   ##     ## ##     ## ##  ####
-##    ## ##     ## ##    ##  ##     ## ##     ## ##   ###
- ######  ##     ## ##     ## ########   #######  ##    */
+@charset "UTF-8";
 /*
-Carbon is a CSS framework
+Carbon is another CSS framework
 written in Sassy CSS by @sciencebymail
 https://www.github.com/sciencebymail/carbon
+
+╔██████╗ █████╗ ██████╗ ██████╗  ██████╗ ███╗   ██╗
+██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔═══██╗████╗  ██║
+██║     ███████║██████╔╝██████╔╝██║   ██║██╔██╗ ██║
+██║     ██╔══██║██╔══██╗██╔══██╗██║   ██║██║╚██╗██║
+╚██████╗██║  ██║██║  ██║██████╔╝╚██████╔╝██║ ╚████║
+╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝  ╚═════╝ ╚═╝  ╚═══╝
 */
-/* partials/_base.scss */
-/* begin base stylesheet */
-/* font family */
+/* font-family */
 @import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
 @import url("https://fonts.googleapis.com/css?family=Lato:100i,300i,400i,700i,900i");
+/* begin stylesheet */
 html {
-  /* (-: */
+  /* :-) */
 }
 
 * {
@@ -28,44 +28,53 @@ html {
 }
 
 body {
+  /* dark mode mixin */
   color: #F5F5F5;
   background-color: #343434;
 }
 
 header {
-  color: #343434;
-  background-color: #F5F5F5;
   top: 0;
-  right: 0;
   margin: 0 auto;
-  position: fixed;
+  position: static;
 }
 
 footer {
+  color: #B6B6B6;
   left: 0;
   bottom: 0;
   margin: 0 auto;
   position: static;
 }
 
-nav {
-  top: 0;
-  right: 0;
-  width: 100%;
+footer a {
+  color: #F5F5F5;
 }
 
-ul {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-end;
+footer a:hover {
+  color: #EED000;
+}
+
+footer a:active {
+  color: #B6B6B6;
+}
+
+nav {
+  top: 0;
+  margin: 0 auto;
+  position: fixed;
+  width: 100%;
+  position: fixed;
 }
 
 li {
+  float: left;
   padding: 2rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
+  display: inline;
 }
 
 h1 {
@@ -94,40 +103,102 @@ h6 {
 
 p {
   font-weight: 400;
+  display: inline;
 }
 
 mark {
   background-color: #EED000;
+  font-weight: 700;
 }
 
 strong {
-  font-weight: 700;
+  font-weight: 900;
+}
+
+hr {
+  border: 2px solid #343434;
+  margin-bottom: 0;
 }
 
 div h1, h2, h3, h4, h5, h6 {
   padding: 0 10px;
 }
 
-div hr {
-  border: 2px solid #343434;
-  margin-bottom: 0;
+section {
+  box-shadow: 4px 4px #343434;
 }
 
+/* partials/_links.scss */
+a, a:active, a:focus, a:hover, a:visited {
+  color: #F5F5F5;
+  text-decoration: none;
+  transition: color 0.5s;
+}
+
+a:hover, a:focus {
+  color: #EED000;
+}
+
+a:active {
+  color: #B6B6B6;
+}
+
+nav a, nav a:active, nav a:focus, nav a:hover, nav a:visited {
+  font-weight: 700;
+  color: #343434;
+}
+
+nav a:hover, nav a:focus {
+  color: #4BB1CF;
+}
+
+nav a:active {
+  color: #343434;
+}
+
+/* partials/_nav.scss */
+/* partials/_header.scss */
+.sticky-top {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.sticky-bottom {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  align-self: flex-end;
+}
+
+/* flex nav */
+/* Large */
+.navigation {
+  display: flex;
+  flex-flow: row wrap;
+  /* This aligns items to the end line on main-axis */
+  justify-content: flex-end;
+}
+
+/* Medium screens */
+@media all and (max-width: 800px) {
+  .navigation {
+    /* When on medium sized screens, we center it by evenly distributing empty space around items */
+    justify-content: space-around;
+  }
+}
+
+/* Small screens */
+@media all and (max-width: 500px) {
+  .navigation {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+
+/* partials/_util.scss */
 .mother {
   background: #7cc6dc linear-gradient(0deg, #7cc6dc 0%, #ff5181 100%) no-repeat;
-}
-
-.row {
-  margin: 0 auto;
-  width: 100%;
-}
-
-section {
-  align-items: flex-start;
-  box-shadow: 4px 4px #343434;
-  display: flex;
-  height: 1000px;
-  justify-content: space-around;
 }
 
 .no-corner {
@@ -140,6 +211,7 @@ section {
   border-left: 10px solid;
   border-bottom-left-radius: 200px;
   border-top-right-radius: 200px;
+  height: 500px;
 }
 
 .aaa {
@@ -154,29 +226,213 @@ section {
   border-color: #B4DC7F;
 }
 
-/* partials/_links.scss */
-a, a:active, a:focus, a:hover, a:visited {
-  color: #343434;
-  text-decoration: none;
-  transition: color 0.5s;
+.space {
+  display: block;
+  width: 500px;
+  height: 500px;
 }
 
-a:hover, a:focus {
-  color: #EED000;
+.left {
+  text-align: left;
 }
 
-a:active {
-  color: #343434;
+.right {
+  text-align: right;
 }
 
-nav a, nav a:active, nav a:focus, nav a:hover, nav a:visited {
-  color: #343434;
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-nav a:hover, nav a:focus {
-  color: #EED000;
+.justify {
+  text-align: justify;
 }
 
-nav a:active {
-  color: #343434;
+.hidden-sm {
+  display: none;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.thin {
+  font-weight: 100;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.black {
+  font-weight: 900;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.h1 {
+  font-size: 4.0rem;
+}
+
+.h2 {
+  font-size: 3.6rem;
+}
+
+.h3 {
+  font-size: 3.0rem;
+}
+
+.h4 {
+  font-size: 2.4rem;
+}
+
+.h5 {
+  font-size: 1.8rem;
+}
+
+.h6 {
+  font-size: 1.5rem;
+}
+
+.transparent {
+  background-color: transparent;
+}
+
+/* COLOR Stretch
+
+.primary { color: $primary; }
+.primary-s { color: darken($primary, $stretch); }
+.primary--s { color: lighten($primary, $stretch); }
+
+.secondary { color: $secondary; }
+.secondary-s { color: darken($secondary, $stretch); }
+.secondary--s { color: lighten($secondary, $stretch); }
+
+.tertiary { color: $tertiary; }
+.tertiary-s { color: darken($tertiary, $stretch); }
+.tertiary--s { color: lighten($tertiary, $stretch); }
+
+// B&W Stretch - 90's Trowback Deluxe Edition
+
+.smoke { color: $smoke; }
+.smoke-s { color: darken($smoke, $stretch); }
+
+.ash { color: $ash; }
+.ash-s { color: darken($ash, $stretch); }
+.ash--s { color: lighten($ash, $stretch); }
+
+.coal { color: $coal; }
+.coal--s { color: lighten($coal, $stretch); }
+*/
+.bg-gradient {
+  background: #ff6e7f;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom #bfe9ff, #ff6e7f);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #bfe9ff, #ff6e7f);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.bg-bwg1 {
+  background: whitesmoke;
+  background: linear-gradient(180deg, whitesmoke 50%, #343434 100%);
+}
+
+.bg-pg1 {
+  background: #4bb1cf;
+  background: linear-gradient(180deg, #4bb1cf 50%, #8ccde0 100%);
+}
+
+.bruce {
+  background: #ff6e7f;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #bfe9ff, #ff6e7f);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #bfe9ff, #ff6e7f);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 960px;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(12, 10px);
+  grid-template-rows: 10px;
+  padding: 0rem;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  height: 1000px;
+}
+
+.container-3 {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 960px;
+  display: grid;
+  grid-gap: 0rem;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: auto;
+  padding: 0rem;
+}
+
+.item {
+  background-color: #B6B6B6;
+  border: 1px solid #343434;
+  padding: 0;
+  font-size: 4rem;
+  text-align: center;
+  outline: 1px solid #343434;
+  outline-offset: 5px;
+}
+
+.full {
+  grid-column: 1 / 13;
+  background-color: #F5F5F5;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.half {
+  grid-column: 1 / 7;
+  background-color: #F5F5F5;
+  height: 100px;
+  margin: 0 auto;
+  width: 100%;
+  box-shadow: 4px 4px #343434;
+}
+
+.item-3 {
+  grid-column: 7 / 13;
+  background-color: #F5F5F5;
+  box-shadow: 4px 4px #343434;
+}
+
+.item13 {
+  display: none;
 }
