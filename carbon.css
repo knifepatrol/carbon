@@ -1,0 +1,182 @@
+/*#####     ###    ########  ########   #######  ##    ##
+##    ##   ## ##   ##     ## ##     ## ##     ## ###   ##
+##        ##   ##  ##     ## ##     ## ##     ## ####  ##
+##       ##     ## ########  ########  ##     ## ## ## ##
+##       ######### ##   ##   ##     ## ##     ## ##  ####
+##    ## ##     ## ##    ##  ##     ## ##     ## ##   ###
+ ######  ##     ## ##     ## ########   #######  ##    */
+/*
+Carbon is a CSS framework
+written in Sassy CSS by @sciencebymail
+https://www.github.com/sciencebymail/carbon
+*/
+/* partials/_base.scss */
+/* begin base stylesheet */
+/* font family */
+@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
+@import url("https://fonts.googleapis.com/css?family=Lato:100i,300i,400i,700i,900i");
+html {
+  /* (-: */
+}
+
+* {
+  color: #343434;
+  font-size: 1.4rem;
+  line-height: 1.15;
+  font-weight: 400;
+  font-family: "Lato", Helvetica, sans-serif;
+}
+
+body {
+  color: #F5F5F5;
+  background-color: #343434;
+}
+
+header {
+  color: #343434;
+  background-color: #F5F5F5;
+  top: 0;
+  right: 0;
+  margin: 0 auto;
+  position: fixed;
+}
+
+footer {
+  left: 0;
+  bottom: 0;
+  margin: 0 auto;
+  position: static;
+}
+
+nav {
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+
+ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}
+
+li {
+  padding: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3.6rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+h4 {
+  font-size: 2.4rem;
+}
+
+h5 {
+  font-size: 1.8rem;
+}
+
+h6 {
+  font-size: 1.6rem;
+}
+
+p {
+  font-weight: 400;
+}
+
+mark {
+  background-color: #EED000;
+}
+
+strong {
+  font-weight: 700;
+}
+
+div h1, h2, h3, h4, h5, h6 {
+  padding: 0 10px;
+}
+
+div hr {
+  border: 2px solid #343434;
+  margin-bottom: 0;
+}
+
+.mother {
+  background: #7cc6dc linear-gradient(0deg, #7cc6dc 0%, #ff5181 100%) no-repeat;
+}
+
+.row {
+  margin: 0 auto;
+  width: 100%;
+}
+
+section {
+  align-items: flex-start;
+  box-shadow: 4px 4px #343434;
+  display: flex;
+  height: 1000px;
+  justify-content: space-around;
+}
+
+.no-corner {
+  border: 0;
+  border-left: 10px solid;
+}
+
+.big-corner {
+  border: 0;
+  border-left: 10px solid;
+  border-bottom-left-radius: 200px;
+  border-top-right-radius: 200px;
+}
+
+.aaa {
+  border-color: #4BB1CF;
+}
+
+.bbb {
+  border-color: #FF1053;
+}
+
+.ccc {
+  border-color: #B4DC7F;
+}
+
+/* partials/_links.scss */
+a, a:active, a:focus, a:hover, a:visited {
+  color: #343434;
+  text-decoration: none;
+  transition: color 0.5s;
+}
+
+a:hover, a:focus {
+  color: #EED000;
+}
+
+a:active {
+  color: #343434;
+}
+
+nav a, nav a:active, nav a:focus, nav a:hover, nav a:visited {
+  color: #343434;
+}
+
+nav a:hover, nav a:focus {
+  color: #EED000;
+}
+
+nav a:active {
+  color: #343434;
+}
