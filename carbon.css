@@ -11,15 +11,19 @@ https://www.github.com/sciencebymail/carbon
 ╚██████╗██║  ██║██║  ██║██████╔╝╚██████╔╝██║ ╚████║
 ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝  ╚═════╝ ╚═╝  ╚═══╝
 */
+/* begin partials/_base.scss */
 /* font-family */
 @import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
 @import url("https://fonts.googleapis.com/css?family=Lato:100i,300i,400i,700i,900i");
+@import url("https://fonts.googleapis.com/css?family=Fredericka+the+Great");
 /* begin stylesheet */
 html {
   /* :-) */
 }
 
 * {
+  outline: 1px solid #EED000;
+  outline-offset: 0px;
   color: #343434;
   font-size: 1.4rem;
   line-height: 1.15;
@@ -36,7 +40,18 @@ body {
 header {
   top: 0;
   margin: 0 auto;
-  position: static;
+}
+
+header a {
+  color: #F5F5F5;
+}
+
+header a:hover {
+  color: #EED000;
+}
+
+header a:active {
+  color: #B6B6B6;
 }
 
 footer {
@@ -62,9 +77,7 @@ footer a:active {
 nav {
   top: 0;
   margin: 0 auto;
-  position: fixed;
   width: 100%;
-  position: fixed;
 }
 
 li {
@@ -78,37 +91,43 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 6rem;
+  font-family: 'Fredericka the Great';
 }
 
 h2 {
-  font-size: 3.6rem;
+  font-size: 4.8rem;
 }
 
 h3 {
-  font-size: 3rem;
+  font-size: 3.6rem;
 }
 
 h4 {
-  font-size: 2.4rem;
+  font-size: 3rem;
 }
 
 h5 {
-  font-size: 1.8rem;
+  font-size: 2.4rem;
 }
 
 h6 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 
 p {
+  font-size: 1.6rem;
   font-weight: 400;
   display: inline;
 }
 
 mark {
   background-color: #EED000;
-  font-weight: 700;
+  font-style: italic;
+  outline: 1px solid #343434;
+  outline-offset: 0px;
+  padding: 0 .5rem;
+  box-shadow: 3px 3px #343434;
 }
 
 strong {
@@ -126,6 +145,9 @@ div h1, h2, h3, h4, h5, h6 {
 
 section {
   box-shadow: 4px 4px #343434;
+  margin: 0;
+  padding: 1em;
+  text-align: justify;
 }
 
 /* partials/_links.scss */
@@ -204,6 +226,7 @@ nav a:active {
 .no-corner {
   border: 0;
   border-left: 10px solid;
+  min-height: 100px;
 }
 
 .big-corner {
@@ -211,7 +234,7 @@ nav a:active {
   border-left: 10px solid;
   border-bottom-left-radius: 200px;
   border-top-right-radius: 200px;
-  height: 500px;
+  min-height: 100px;
 }
 
 .aaa {
@@ -387,7 +410,7 @@ nav a:active {
   padding: 0rem;
   justify-content: space-evenly;
   align-content: space-evenly;
-  height: 1000px;
+  background-color: #F5F5F5;
 }
 
 .container-3 {
@@ -405,7 +428,7 @@ nav a:active {
   background-color: #B6B6B6;
   border: 1px solid #343434;
   padding: 0;
-  font-size: 4rem;
+  font-size: 6rem;
   text-align: center;
   outline: 1px solid #343434;
   outline-offset: 5px;
@@ -421,7 +444,6 @@ nav a:active {
 .half {
   grid-column: 1 / 7;
   background-color: #F5F5F5;
-  height: 100px;
   margin: 0 auto;
   width: 100%;
   box-shadow: 4px 4px #343434;
@@ -429,7 +451,6 @@ nav a:active {
 
 .item-3 {
   grid-column: 7 / 13;
-  background-color: #F5F5F5;
   box-shadow: 4px 4px #343434;
 }
 
